@@ -2,168 +2,288 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Adam Mashukov</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inal Adam Mashukov – Personal Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --bg: #f4f4f4;
-      --fg: #111;
-      --card-bg: rgba(255, 255, 255, 0.8);
-      --shadow: rgba(0, 0, 0, 0.1);
-    }
-    [data-theme="dark"] {
-      --bg: #0f0f0f;
-      --fg: #eee;
-      --card-bg: rgba(20, 20, 20, 0.6);
-      --shadow: rgba(255, 255, 255, 0.1);
-    }
-
+    /* Reset & base */
     * {
-      margin: 0;
-      padding: 0;
       box-sizing: border-box;
-      transition: background-color 0.3s, color 0.3s;
     }
-
     body {
+      margin: 0;
       font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--fg);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
+      background: #fff;
+      color: #222;
+      line-height: 1.6;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 1rem 1.5rem 3rem;
+    }
+    a {
+      color: #0366d6;
+      text-decoration: none;
+    }
+    a:hover,
+    a:focus {
+      text-decoration: underline;
     }
 
-    .card {
-      background: var(--card-bg);
-      backdrop-filter: blur(10px);
-      padding: 2rem;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px var(--shadow);
-      max-width: 600px;
-      text-align: center;
-      animation: fadeIn 1s ease-out;
+    header {
+      padding: 1rem 0;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 2rem;
+    }
+    header h1 {
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+      font-size: 2.2rem;
+      color: #111;
+    }
+    header .contact-info {
+      font-size: 0.95rem;
+      color: #444;
+    }
+    header .contact-info a {
+      margin-left: 1rem;
+      margin-right: 1rem;
     }
 
-    h1 {
-      font-size: 2.5rem;
+    section {
+      margin-bottom: 2.5rem;
+    }
+    section h2 {
+      border-bottom: 2px solid #0366d6;
+      padding-bottom: 0.3rem;
       margin-bottom: 1rem;
+      font-weight: 600;
+      font-size: 1.5rem;
+      color: #0366d6;
     }
 
-    .typing {
-      font-size: 1.2rem;
-      color: #777;
-      min-height: 1.5em;
+    /* Lists */
+    ul {
+      padding-left: 1.2rem;
     }
 
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 1s forwards;
-      animation-delay: 0.5s;
+    /* Publications */
+    .pub {
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
     }
 
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    /* Experience & Education */
+    .role, .education-item {
+      margin-bottom: 1.5rem;
+    }
+    .role-header, .edu-header {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 0.2rem;
+    }
+    .role-org, .edu-details {
+      margin-left: 0.3rem;
+      color: #555;
+      font-style: italic;
+      font-size: 0.95rem;
+    }
+    .role-desc {
+      margin-left: 1rem;
+      font-size: 0.95rem;
+      color: #333;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to   { opacity: 1; }
+    /* Skills */
+    .skills-list {
+      columns: 2;
+      -webkit-columns: 2;
+      -moz-columns: 2;
+      font-size: 0.95rem;
+      color: #333;
     }
 
-    .toggle-theme {
-      margin-top: 2rem;
-      background: none;
-      border: 1px solid var(--fg);
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      color: var(--fg);
+    /* Footer */
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #999;
+      margin-top: 4rem;
+      border-top: 1px solid #eee;
+      padding-top: 1rem;
     }
 
+    /* Responsive */
     @media (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
+      body {
+        padding: 1rem 1rem 2rem;
+        max-width: 100%;
       }
-      .typing {
+      .skills-list {
+        columns: 1;
+      }
+      .role-header, .edu-header {
+        flex-direction: column;
         font-size: 1rem;
+      }
+      .role-org, .edu-details {
+        margin-left: 0;
+        font-style: normal;
+      }
+      header h1 {
+        font-size: 1.8rem;
       }
     }
   </style>
 </head>
 <body>
-  <div class="card fade-in">
-    <h1>Adam Mashukov</h1>
-    <div class="typing" id="typed"></div>
-    <button class="toggle-theme" onclick="toggleTheme()">Toggle Dark Mode</button>
-  </div>
 
-  <script>
-    // Typing effect
-    const phrases = [
-      "PhD Student in Computer Science",
-      "Machine Learning Engineer",
-      "Time Series Enthusiast",
-      "Representation Learning Explorer"
-    ];
-    let i = 0, j = 0, currentPhrase = [], isDeleting = false, isEnd = false;
-    const typed = document.getElementById("typed");
+  <header>
+    <h1>Inal Adam Mashukov</h1>
+    <div class="contact-info">
+      Email: <a href="mailto:Inal.Mashukov001@umb.edu">Inal.Mashukov001@umb.edu</a> |
+      <a href="https://www.linkedin.com/in/inal-mashukov" target="_blank" rel="noopener">LinkedIn</a> |
+      <a href="https://scholar.google.com/citations?user=YOURID" target="_blank" rel="noopener">Google Scholar</a> |
+      <a href="https://github.com/InalMashukov" target="_blank" rel="noopener">GitHub</a> |
+      <a href="https://www.researchgate.net/profile/Inal-Mashukov" target="_blank" rel="noopener">ResearchGate</a>
+    </div>
+  </header>
 
-    function loop() {
-      isEnd = false;
-      typed.innerHTML = currentPhrase.join("");
+  <section id="education">
+    <h2>Education</h2>
 
-      if (i < phrases.length) {
-        if (!isDeleting && j <= phrases[i].length) {
-          currentPhrase.push(phrases[i][j]);
-          j++;
-        }
+    <div class="education-item">
+      <div class="edu-header">
+        <span>University of Massachusetts - Boston</span>
+        <span>GPA 3.6</span>
+      </div>
+      <div class="edu-details">
+        Mathematics, BA<br />
+        Recipient of the EKM Scholarship at UMass Boston<br />
+        Computer Science, PhD
+      </div>
+    </div>
+  </section>
 
-        if (isDeleting && j <= phrases[i].length) {
-          currentPhrase.pop();
-          j--;
-        }
+  <section id="publications">
+    <h2>Publications</h2>
 
-        if (j === phrases[i].length) {
-          isEnd = true;
-          isDeleting = true;
-        }
+    <div class="pub">
+      <strong>A Multi-view Feature Construction and Multi-Encoder-Decoder Transformer Architecture for Time Series Classification.</strong><br />
+      Li, Z., Ding, W., Mashukov, I., et al. (2024). Advances in Knowledge Discovery and Data Mining. PAKDD 2024.<br />
+      Association for Computing Machinery Digital Library. Springer.<br />
+      <a href="https://doi.org/10.1007/978-981-97-2266-2_19" target="_blank" rel="noopener">https://doi.org/10.1007/978-981-97-2266-2_19</a>
+    </div>
 
-        if (isDeleting && j === 0) {
-          currentPhrase = [];
-          isDeleting = false;
-          i++;
-          if (i === phrases.length) i = 0;
-        }
-      }
+    <div class="pub">
+      <strong>Optimizing Real-World Physical Activity Recognition: Determining Data Sufficiency and Exploring Model Robustness.</strong><br />
+      Mashukov, I., Ding, W., et al (2025). IEEE Transactions on Artificial Intelligence. (Under review).
+    </div>
+  </section>
 
-      const speedUp = Math.random() * (80 - 50) + 50;
-      const normalSpeed = Math.random() * (150 - 100) + 100;
-      const time = isEnd ? 1000 : isDeleting ? speedUp : normalSpeed;
+  <section id="experience">
+    <h2>Experience</h2>
 
-      setTimeout(loop, time);
-    }
+    <div class="role">
+      <div class="role-header">
+        <span>Researcher</span>
+        <span>2023 - Present</span>
+      </div>
+      <div class="role-org">
+        Artificial Intelligence Laboratory, Knowledge Discovery and Data Mining Laboratory, Department of Computer Science, University of Massachusetts Boston<br />
+        Supervisors: Dr. Wei Ding, Dr. Ping Chen
+      </div>
+      <div class="role-desc">
+        Performing academic research and developing novel state-of-the-art Deep Learning models. Building models in Python using Pytorch, Tensorflow, and associated frameworks. Adhering to production level software development practices. Training deep learning models and assessing their performance, tuning the models to produce better results.
+      </div>
+    </div>
 
-    loop();
+    <div class="role">
+      <div class="role-header">
+        <span>Applied Researcher</span>
+        <span>2024 - Present</span>
+      </div>
+      <div class="role-org">
+        Massachusetts General Hospital, Harvard Medical School<br />
+        Supervisors: Dr. Shiqian Shen (Harvard Medical School, MGH)
+      </div>
+      <div class="role-desc">
+        Building deep learning models for video recognition, time series analysis. Performing model training and tuning, particularly in the context of video and sensor data recognition for human and animal activities for medical applications at MGH, Harvard Medical School.
+      </div>
+    </div>
 
-    // Dark mode toggle
-    function toggleTheme() {
-      const current = document.documentElement.getAttribute("data-theme");
-      document.documentElement.setAttribute("data-theme", current === "dark" ? "light" : "dark");
-    }
+    <div class="role">
+      <div class="role-header">
+        <span>Statistician, Graduate Assistant</span>
+        <span>2024 - Present</span>
+      </div>
+      <div class="role-org">
+        Center for Statistical Computing, University of Massachusetts Boston
+      </div>
+      <div class="role-desc">
+        Performing statistical analysis for graduate researchers; analyses include regression and parametric statistics. Lecturing graduate students on mathematical statistics and statistical software, such as R, Python, SPSS, others.
+      </div>
+    </div>
+  </section>
 
-    // Save preferred theme (optional)
-    if (localStorage.getItem("theme") === "dark") {
-      document.documentElement.setAttribute("data-theme", "dark");
-    }
-  </script>
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <li>Python (PyTorch, HuggingFace, TensorFlow, XGBoost, others)</li>
+      <li>Java, SQL (Oracle and Microsoft), R, C, C++</li>
+      <li>Linux, Docker, Git, CI/CD, AWS</li>
+      <li>Transformers, CNNs, RNNs, GANs, Autoencoders, Diffusion Models, Reinforcement Learning, LLMs, Representation Learning</li>
+      <li>Time Series Analysis, Computer Vision, Audio Processing, NLP, Classification, Regression, Clustering</li>
+      <li>CUDA for GPU utilization, hyperparameter tuning, pretrained models</li>
+      <li>Database Administration, Computer Security, Classical ML, OOD, Mathematics</li>
+    </ul>
+  </section>
+
+  <section id="service">
+    <h2>Professional Service</h2>
+
+    <div class="role">
+      <div class="role-header">
+        <span>Editor, Reviewer</span>
+        <span>2024 - Present</span>
+      </div>
+      <div class="role-org">
+        Association for Computing Machinery, Transactions on Knowledge Discovery from Data,<br />
+        Association for Computing Machinery, Transactions on Intelligent Systems and Technology
+      </div>
+      <div class="role-desc">
+        Serving as a reviewer of research publications submitted to the Association for Computing Machinery’s Journals.
+      </div>
+    </div>
+
+    <div class="role">
+      <div class="role-header">
+        <span>Administrator</span>
+        <span>2025</span>
+      </div>
+      <div class="role-org">
+        With Dr. Wei Ding, Society for Industrial and Applied Mathematics, International Conference on Data Mining SDM
+      </div>
+    </div>
+
+    <div class="role">
+      <div class="role-header">
+        <span>Teaching Assistant</span>
+        <span>2023 - 2024</span>
+      </div>
+      <div class="role-org">
+        Department of Engineering, University of Massachusetts Boston
+      </div>
+      <div class="role-desc">
+        Performing data collection for students in experiments using motion capture technology. Teaching machine learning principles and building deep learning models in Python, including theory and coding.
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Inal Adam Mashukov</p>
+  </footer>
 </body>
 </html>
