@@ -7,6 +7,19 @@
   <title>Inal Adam Mashukov – Personal Website</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
+
+header::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background-color: #ddd;
+  margin-top: 1rem;
+  width: 100vw; /* full screen width */
+  position: relative;
+  left: calc(-50vw + 50%); /* centers it */
+}
+
+
     /* Reset & base */
     * {
       box-sizing: border-box;
@@ -46,10 +59,12 @@
     header .contact-info {
       font-size: 0.95rem;
       color: #444;
+      width: 100%;
     }
     header .contact-info a {
       margin-left: 1rem;
       margin-right: 1rem;
+      width: 100%;
     }
 
     section {
@@ -172,16 +187,14 @@
 
   </header>
 
-
-      <p> 
-        <br> Try: <br>
-    $$ y = \sigma(\theta^T \mathbf{x} + b) $$
-        <br> Then: <br>
-    $$ \theta := \theta - \alpha \nabla \mathcal{L}(\theta) $$
-        <br> Repeat until <br>
-      $$ \mathcal{L}(\theta) \to 0 $$
-    </p> 
-
+<div style="font-size: 0.9rem; line-height: 1.4;">
+  <p>Try:</p>
+  $$ y = \sigma(\theta^T \mathbf{x} + b) $$
+  <p>Then:</p>
+  $$ \theta := \theta - \alpha \nabla \mathcal{L}(\theta) $$
+  <p>Repeat until:</p>
+  $$ \mathcal{L}(\theta) \to 0 $$
+</div>
 
   <section id="publications">
     <h2>Publications</h2>
@@ -241,6 +254,7 @@
         Artificial Intelligence Laboratory, Knowledge Discovery and Data Mining Laboratory, Department of Computer Science, University of Massachusetts Boston<br />
         Supervisors: Dr. Wei Ding, Dr. Ping Chen
       </div>
+    </div>
 
 
     <div class="role">
@@ -252,6 +266,7 @@
         Massachusetts General Hospital, Harvard Medical School<br />
         Supervisors: Dr. Shiqian Shen (Harvard Medical School, MGH)
       </div>
+          </div>
 
     <div class="role">
       <div class="role-header">
@@ -261,6 +276,7 @@
       <div class="role-org">
         Center for Statistical Computing, University of Massachusetts Boston
       </div>
+          </div>
   </section>
 
   <section id="skills">
@@ -327,6 +343,7 @@
       <div class="role-org">
         Department of Engineering, University of Massachusetts Boston
       </div>
+    </div>
 
   </section>
 
