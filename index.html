@@ -159,14 +159,15 @@
 
   <header>
     <h1>Inal Adam Mashukov</h1>
-    <div class="contact-info">
-      Email: <a href="mailto:Inal.Mashukov001@umb.edu">Inal.Mashukov001@umb.edu</a> |
-      <a href="https://www.linkedin.com/in/inal-adam-mashukov-938058259/" target="_blank" rel="noopener">LinkedIn</a> |
-      <a href="https://scholar.google.com/citations?user=ValeXhMAAAAJ" target="_blank" rel="noopener">Google Scholar</a> |
-      <a href="https://github.com/IAMashukov" target="_blank" rel="noopener">GitHub</a> |
-      <a href="https://www.researchgate.net/profile/Inal-Mashukov" target="_blank" rel="noopener">ResearchGate</a>
-      <a href="inalm-resume.pdf" target="_blank" rel="noopener"><strong>Resume</strong></a>
-    </div>
+      <div class="contact-info" style="white-space: nowrap;">
+        Email: <a href="mailto:Inal.Mashukov001@umb.edu">Inal.Mashukov001@umb.edu</a> |
+        <a href="https://www.linkedin.com/in/inal-adam-mashukov-938058259/" target="_blank" rel="noopener">LinkedIn</a> |
+        <a href="https://scholar.google.com/citations?user=ValeXhMAAAAJ" target="_blank" rel="noopener">Google Scholar</a> |
+        <a href="https://github.com/IAMashukov" target="_blank" rel="noopener">GitHub</a> |
+        <a href="https://www.researchgate.net/profile/Inal-Mashukov" target="_blank" rel="noopener">ResearchGate</a> |
+        <a href="inalm-resume.pdf" target="_blank" rel="noopener"><strong>Resume</strong></a>
+      </div>
+
   </header>
 
 
@@ -174,7 +175,9 @@
         <br> Try: <br>
     $$ y = \sigma(\theta^T \mathbf{x} + b) $$
         <br> Then: <br>
-    $$ \theta := \theta - \alpha \nabla_\theta J(\theta) $$
+    $$ \theta := \theta - \alpha \nabla_\mathcal{L}(\theta) $$
+        <br> Repeat until <br>
+      $$ \mathcal{L}(\theta) \to 0 $$
     </p> 
 
 
