@@ -8,7 +8,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
 
-
+header::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background-color: #ddd;
+  margin-top: 1rem;
+  width: 100vw; /* full screen width */
+  position: relative;
+  left: calc(-50vw + 50%); /* centers it */
+}
 
 
     /* Reset & base */
@@ -35,12 +44,6 @@
       text-decoration: underline;
     }
 
-    header {
-      padding: 1rem 0;
-      border-bottom: 1px solid #ddd;
-      margin-bottom: 2rem;
-      text-align: center; 
-    }
     header h1 {
       font-weight: 600;
       margin-bottom: 0.2rem;
@@ -181,7 +184,7 @@
 
 <div style="font-size: 0.9rem; line-height: 1.4;">
   <p>Try:</p>
-  $$ y = \sigma(W^T \mathbf{x} + b) \ W,b \in \theta $$
+  $$ y = \sigma(W^T \mathbf{x} + b) W,b \in \theta $$
   <p>Then:</p>
   $$ \theta := \theta - \alpha \nabla \mathcal{L}(\theta) $$
   <p>Repeat until:</p>
