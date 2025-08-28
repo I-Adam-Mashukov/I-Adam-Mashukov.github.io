@@ -8,6 +8,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
 
+    .profile-pic {
+  width: 150px;          /* size of image */
+  height: 150px;
+  border-radius: 50%;    /* makes it round */
+  object-fit: cover;     /* crop nicely */
+  margin-right: 1rem;    /* spacing between image and text */
+}
+header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+header .header-text {
+  flex: 1;
+}
+
+    
+
+    
 header::after {
   content: "";
   display: block;
@@ -169,18 +188,21 @@ header::after {
 </head>
 <body>
 
-  <header>
+<header>
+  <img src="profile.jpg" alt="Profile Picture" class="profile-pic" />
+  <div class="header-text">
     <h1>Inal Adam Mashukov</h1>
-      <div class="contact-info" style="white-space: nowrap;">
-        Email: <a href="mailto:Inal.Mashukov001@umb.edu">Inal.Mashukov001@umb.edu</a> |
-        <a href="https://www.linkedin.com/in/inal-adam-mashukov-938058259/" target="_blank" rel="noopener">LinkedIn</a> |
-        <a href="https://scholar.google.com/citations?user=ValeXhMAAAAJ" target="_blank" rel="noopener">Google Scholar</a> |
-        <a href="https://github.com/IAMashukov" target="_blank" rel="noopener">GitHub</a> |
-        <a href="https://www.researchgate.net/profile/Inal-Mashukov" target="_blank" rel="noopener">ResearchGate</a> |
-        <a href="inalm-resume.pdf" target="_blank" rel="noopener">Resume</a>
-      </div>
+    <div class="contact-info" style="white-space: nowrap;">
+      Email: <a href="mailto:Inal.Mashukov001@umb.edu">Inal.Mashukov001@umb.edu</a> |
+      <a href="https://www.linkedin.com/in/inal-adam-mashukov-938058259/" target="_blank" rel="noopener">LinkedIn</a> |
+      <a href="https://scholar.google.com/citations?user=ValeXhMAAAAJ" target="_blank" rel="noopener">Google Scholar</a> |
+      <a href="https://github.com/IAMashukov" target="_blank" rel="noopener">GitHub</a> |
+      <a href="https://www.researchgate.net/profile/Inal-Mashukov" target="_blank" rel="noopener">ResearchGate</a> |
+      <a href="inalm-resume.pdf" target="_blank" rel="noopener">Resume</a>
+    </div>
+  </div>
+</header>
 
-  </header>
 
 <div style="font-size: 0.9rem; line-height: 1.2; margin-bottom: 1rem;">
   <p style="margin: 0.2rem 0;">
