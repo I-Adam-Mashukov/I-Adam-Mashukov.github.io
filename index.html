@@ -9,8 +9,8 @@
   <style>
 
     .profile-pic {
-  width: 150px;          /* size of image */
-  height: 150px;
+  width: 500px;          /* size of image */
+  height: 500px;
   border-radius: 50%;    /* makes it round */
   object-fit: cover;     /* crop nicely */
   margin-right: 1rem;    /* spacing between image and text */
@@ -70,16 +70,17 @@ header::after {
       color: #111;
       width: 100%
     }
-    header .contact-info {
-      font-size: 0.95rem;
-      color: #444;
-      width: 100%;
-    }
-    header .contact-info a {
-      margin-left: 1rem;
-      margin-right: 1rem;
-      width: 100%;
-    }
+.contact-info {
+  font-size: 0.95rem;
+  color: #444;
+  text-align: center;     /* centers it under header */
+  margin: 0.5rem 0 2rem;  /* spacing below */
+  white-space: nowrap;
+}
+.contact-info a {
+  margin: 0 0.6rem;
+}
+
 
     section {
       margin-bottom: 2.5rem;
@@ -192,16 +193,18 @@ header::after {
   <img src="PaulEnglish-UMB-Event-0622.JPEG" alt="Profile Picture" class="profile-pic" />
   <div class="header-text">
     <h1>Inal Adam Mashukov</h1>
-    <div class="contact-info" style="white-space: nowrap;">
-      Email: <a href="mailto:Inal.Mashukov001@umb.edu">Inal.Mashukov001@umb.edu</a> |
-      <a href="https://www.linkedin.com/in/inal-adam-mashukov-938058259/" target="_blank" rel="noopener">LinkedIn</a> |
-      <a href="https://scholar.google.com/citations?user=ValeXhMAAAAJ" target="_blank" rel="noopener">Google Scholar</a> |
-      <a href="https://github.com/IAMashukov" target="_blank" rel="noopener">GitHub</a> |
-      <a href="https://www.researchgate.net/profile/Inal-Mashukov" target="_blank" rel="noopener">ResearchGate</a> |
-      <a href="inalm-resume.pdf" target="_blank" rel="noopener">Resume</a>
-    </div>
   </div>
 </header>
+
+<!-- New contact section -->
+<div class="contact-info">
+  Email: <a href="mailto:Inal.Mashukov001@umb.edu">Inal.Mashukov001@umb.edu</a> |
+  <a href="https://www.linkedin.com/in/inal-adam-mashukov-938058259/" target="_blank" rel="noopener">LinkedIn</a> |
+  <a href="https://scholar.google.com/citations?user=ValeXhMAAAAJ" target="_blank" rel="noopener">Google Scholar</a> |
+  <a href="https://github.com/IAMashukov" target="_blank" rel="noopener">GitHub</a> |
+  <a href="https://www.researchgate.net/profile/Inal-Mashukov" target="_blank" rel="noopener">ResearchGate</a> |
+  <a href="inalm-resume.pdf" target="_blank" rel="noopener">Resume</a>
+</div>
 
 
 <div style="font-size: 0.9rem; line-height: 1.2; margin-bottom: 1rem;">
